@@ -8,7 +8,7 @@
 
 	const { initialPokemon } = data;
 
-	let pokemonSelected = initialPokemon.length ? initialPokemon : null;
+	let pokemonSelected = initialPokemon ?? null;
 
 	let loading = false;
 

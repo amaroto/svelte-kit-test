@@ -2,8 +2,6 @@ import type { PageServerLoad } from './$types';
 
 export const load = (async ({ fetch }) => {
 	const getInfo = async () => {
-		console.log('RUN');
-
 		const res = await fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13', {
 			method: 'GET',
 			headers: {
@@ -12,8 +10,6 @@ export const load = (async ({ fetch }) => {
 			}
 		});
 		const data = await res.json();
-
-		console.log(data);
 
 		return data;
 	};
