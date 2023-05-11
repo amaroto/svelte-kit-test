@@ -3,14 +3,14 @@
 	import Loader from './loader.svelte';
 	import type { LayoutData } from './$types';
 
+    // start params
 	export let pokemons: array;
 	export let pokemon: string | null = null;
+    // end params
 
 	let pokemonSelected: any = pokemon;
 
 	let loading = false;
-
-	// const pokemons = ['pikachu', 'charmander', 'bulbasaur', 'gengar'];
 
 	const getPokemonInfo = (pokemon: any) => {
 		loading = true;

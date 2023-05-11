@@ -8,5 +8,8 @@
 </script>
 
 <section>
-	<PokemonCard pokemon={pokemonSelected} pokemons={['pikachu', 'charmander', 'bulbasaur', 'eevee']} />
+	<PokemonCard
+		pokemon={pokemonSelected}
+		pokemons={['pikachu', 'charmander', 'bulbasaur', 'eevee']}
+	/>
 </section>
