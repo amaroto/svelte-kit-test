@@ -1,14 +1,12 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import Loader from '../../components/loader.svelte';
-
 	import type { LayoutData } from './$types';
 
 	export let data: LayoutData;
-
 	const { initialPokemon } = data;
 
-	let pokemonSelected = initialPokemon ?? null;
+	let pokemonSelected: any = initialPokemon;
 
 	let loading = false;
 
@@ -50,9 +48,24 @@
 			<h3><b>Pokemon selected:</b> {pokemonSelected?.name}</h3>
 
 			{#if pokemonSelected}
-				<img height="auto" alt="back-default" width="250px" src={pokemonSelected?.sprites?.back_default} />
-				<img height="auto" alt="front-default" width="250px" src={pokemonSelected?.sprites?.front_default} />
-				<img height="auto" alt="front-shiny" width="250px" src={pokemonSelected?.sprites?.front_shiny} />
+				<img
+					height="auto"
+					alt="back-default"
+					width="250px"
+					src={pokemonSelected?.sprites?.back_default}
+				/>
+				<img
+					height="auto"
+					alt="front-default"
+					width="250px"
+					src={pokemonSelected?.sprites?.front_default}
+				/>
+				<img
+					height="auto"
+					alt="front-shiny"
+					width="250px"
+					src={pokemonSelected?.sprites?.front_shiny}
+				/>
 			{/if}
 
 			<h4>Moveset:</h4>
