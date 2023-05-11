@@ -8,6 +8,8 @@
 
 	let pokemonSelected: any = initialPokemon;
 
+	console.log(pokemonSelected);
+
 	let loading = false;
 
 	const pokemons = ['pikachu', 'charmander', 'bulbasaur', 'gengar'];
@@ -31,6 +33,7 @@
 	<ul>
 		{#each pokemons as pokemon}
 			<li class="pt-10">
+				<a target="_self" href={'/poke?pokemon=' + pokemon}>{pokemon}</a>
 				<button
 					disabled={loading || pokemonSelected?.name === pokemon}
 					on:click={() => getPokemonInfo(pokemon)}>{pokemon}</button
