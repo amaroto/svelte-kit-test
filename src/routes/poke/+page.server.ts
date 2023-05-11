@@ -16,5 +16,5 @@ export const load = (async ({ fetch, request }) => {
 		return { initialPokemon: getPokemonInfo(pokemonParam) };
 	}
 
-	return { initialPokemon: request.url };
+	return { initialPokemon: pokemonParam };
 }) satisfies PageServerLoad;
