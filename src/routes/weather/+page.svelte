@@ -3,10 +3,7 @@
 	import { onMount } from 'svelte';
 
 	export let data: LayoutData;
-
 	const { weather } = data;
-
-	console.log(weather);
 </script>
 
 <section>

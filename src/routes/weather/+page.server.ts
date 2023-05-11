@@ -2,9 +2,6 @@ import type { PageServerLoad } from './$types';
 import { env } from '$env/dynamic/public';
 
 export const load = (async ({ fetch }) => {
-
-	console.log('code', process.env.RAPID_API_KEY);
-
 	const getInfo = async () => {
 		const res = await fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13', {
 			method: 'GET',
