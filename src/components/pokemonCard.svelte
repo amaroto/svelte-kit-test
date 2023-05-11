@@ -3,8 +3,8 @@
 	import Loader from './loader.svelte';
 	import type { LayoutData } from './$types';
 
-    export let pokemons: array;
-    export let pokemon: string | null = null;
+	export let pokemons: array;
+	export let pokemon: string | null = null;
 
 	let pokemonSelected: any = pokemon;
 
@@ -16,7 +16,9 @@
 		loading = true;
 		fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon, { method: 'GET', headers: {} })
 			.then((response) => response.json())
-			.then((data) => (pokemonSelected = data))
+			.then((data) => {
+				pokemonSelected = data;
+			})
 			.finally(() =>
 				setTimeout(() => {
 					loading = false;

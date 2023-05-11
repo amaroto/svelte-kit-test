@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 
-export const load = (async ({ fetch, params }) => {
-	const pokemonParam = params?.slug;
+export const load = (async ({ fetch, url }) => {
+	const pokemonParam = url.searchParams.get('pokemon');
 
 	if (pokemonParam) {
 		const getPokemonInfo = async (pokemon: string) => {
