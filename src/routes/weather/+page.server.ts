@@ -15,5 +15,5 @@ export const load = (async ({ fetch }) => {
 		return data;
 	};
 
-	return { weather: getInfo() };
+	return { weather: {} };
 }) satisfies PageServerLoad;
