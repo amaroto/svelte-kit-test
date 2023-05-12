@@ -1,7 +1,9 @@
 <script lang="ts">
 	import PokemonCard from '../../components/pokemonCard.svelte';
 
-	export let data: LayoutData;
+	import type { PageData } from './$types';
+	export let data: PageData;
+
 	const { initialPokemon } = data;
 
 	let pokemonSelected: any = initialPokemon;

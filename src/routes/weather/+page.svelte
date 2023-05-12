@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { LayoutData } from './$types';
-	import { onMount } from 'svelte';
-
 	export let data: LayoutData;
+	
 	const { weather } = data;
 </script>
 

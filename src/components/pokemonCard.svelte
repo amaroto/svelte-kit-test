@@ -3,10 +3,10 @@
 	import Loader from './loader.svelte';
 	import type { LayoutData } from './$types';
 
-    // start params
+	// start params
 	export let pokemons: array;
 	export let pokemon: string | null = null;
-    // end params
+	// end params
 
 	let pokemonSelected: any = pokemon;
 
@@ -33,11 +33,29 @@
 	<ul>
 		{#each pokemons as pokemon}
 			<li class="pt-10">
-				<a target="_self" href={'/poke/' + pokemon}>{pokemon}</a>
-				<button
-					disabled={loading || pokemonSelected?.name === pokemon}
-					on:click={() => getPokemonInfo(pokemon)}>{pokemon}</button
-				>
+				<span>
+					<button
+						disabled={loading || pokemonSelected?.name === pokemon}
+						on:click={() => getPokemonInfo(pokemon)}
+						>INLINE {pokemon}
+					</button>
+				</span>
+			</li>
+		{/each}
+	</ul>
+
+	<ul>
+		{#each pokemons as pokemon}
+			<li class="pt-10">
+				<span><a target="_self" href={'/poke?pokemon=' + pokemon}>GET PARAM {pokemon}</a></span>
+			</li>
+		{/each}
+	</ul>
+
+	<ul>
+		{#each pokemons as pokemon}
+			<li class="pt-10">
+				<span><a target="_self" href={'/poke/' + pokemon}>SLUG {pokemon}</a></span>
 			</li>
 		{/each}
 	</ul>
